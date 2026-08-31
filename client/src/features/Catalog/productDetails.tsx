@@ -61,7 +61,9 @@ export default function productDetails() {//component mounts
             </Button>
           </Grid2>
         </Grid2>
-        <Link to={"url"}>View on Browser</Link>
+        <Link to={product.url} target="_blank" rel="noopener noreferrer">
+          View on Browser
+        </Link>
       </Grid2>
     </Grid2>
   )

@@ -31,7 +31,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/oldPortfolio.jpg",
                 Brand = "HTML, CSS, JavaScript",
                 Type = "Web Site",
-                QuantityInStock = 100
+                QuantityInStock = 100,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/oldPortfolio.jpg"
             },
             
             new ()
@@ -42,7 +43,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/angular7-1.jpg",
                 Brand = "Angular",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/angular7-1.jpg"
             },
             new ()
             {
@@ -52,7 +54,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/angular7-2.jpg",
                 Brand = "Angular",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/angular7-2.jpg"
             },
             new ()
             {
@@ -62,7 +65,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/keystonehardscapesTabs.jpg",
                 Brand = "Angular",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/keystonehardscapesTabs.jpg"
             },
             new ()
             {
@@ -72,7 +76,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/map.png",
                 Brand = "PHP, Javascript, CSS",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/map.png"
             },
             new ()
             {
@@ -82,7 +87,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/arcgisForm.jpg",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
-                QuantityInStock = 100
+                QuantityInStock = 100,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/arcgisForm.jpg"
             },
             new ()
             {
@@ -92,7 +98,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/compositeSimpsons.png",
                 Brand = "Python",
                 Type = "Web Site",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/compositeSimpsons.png"
             },
             new ()
             {
@@ -102,7 +109,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/atlpartnerships.jpg",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/atlpartnerships.jpg"
             },
             new ()
             {
@@ -112,7 +120,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/ecommercePage.png",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/ecommercePage.png"
             },
             new ()
             {
@@ -122,7 +131,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/groups.jpg",
                 Brand = "JQUery, Javascript, HTML, CSS",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/groups.jpg"
             },
             new ()
             {
@@ -132,7 +142,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/MarianaMontiel.jpg",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/MarianaMontiel.jpg"
             },
             new ()
             {
@@ -142,7 +153,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/netForm1.png",
                 Brand = "Angular, Typescript, .NET, SQL Server",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/netForm1.png"
             },
             new ()
             {
@@ -152,7 +164,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/salaries.jpg",
                 Brand = "Tableau",
                 Type = "Visualization",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/salaries.jpg"
             },
             new ()
             {
@@ -162,7 +175,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/tableauDayHourMostUsed.jpg",
                 Brand = "Tableau",
                 Type = "Visualization",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/tableauDayHourMostUsed.jpg"
             },
             new ()
             {
@@ -172,7 +186,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/take6(2).png",
                 Brand = "JQuery",
                 Type = "Web Application",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/take6(2).png"
             },
             new ()
             {
@@ -182,7 +197,8 @@ public class DbInitializer
                 PictureUrl = "/images/products/take8.jpg",
                 Brand = "Data Analysis",
                 Type = "Visualization",
-                QuantityInStock = 1
+                QuantityInStock = 1,
+                Url = "https://mgportfolio.azurewebsites.net/images/products/take8.jpg"
             }
 };
         context.Products.AddRange(products);

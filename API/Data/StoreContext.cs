@@ -10,6 +10,14 @@ namespace API.Data
         }
 
         public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Product>()
+                .Property(product => product.Url)
+                .IsRequired()
+                .HasColumnType("nvarchar(max)");
+        }
         // Ensure no properties named "Database" or "SaveChanges()" are written here!
     }
 }
