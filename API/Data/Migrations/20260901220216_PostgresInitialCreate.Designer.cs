@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20260901211524_PostgresInitialCreate")]
+    [Migration("20260901220216_PostgresInitialCreate")]
     partial class PostgresInitialCreate
     {
         /// <inheritdoc />
@@ -60,7 +60,7 @@ namespace API.Data.Migrations
 
                     b.Property<string>("Url")
                         .IsRequired()
-                        .HasColumnType("text(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
