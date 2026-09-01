@@ -1,5 +1,5 @@
-# 1. Use the official .NET SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# 1. Use the official .NET 10 SDK image to build the app
+FROM ://microsoft.com AS build
 WORKDIR /src
 
 # 2. Copy the project file first and restore dependencies
@@ -10,8 +10,8 @@ RUN dotnet restore "API.csproj"
 COPY . .
 RUN dotnet publish "API.csproj" -c Release -o /app/publish
 
-# 4. Build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+# 4. Use the official .NET 10 ASP.NET runtime image
+FROM ://microsoft.com AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
@@ -19,4 +19,5 @@ COPY --from=build /app/publish .
 ENV ASPNETCORE_HTTP_PORTS=10000
 
 ENTRYPOINT ["dotnet", "API.dll"]
+
 
