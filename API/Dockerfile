@@ -11,7 +11,7 @@ COPY . .
 RUN dotnet publish "API.csproj" -c Release -o /app/publish
 
 # Stage 2: Runtime Environment
-FROM ://microsoft.com AS runtime-env
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
 WORKDIR /app
 COPY --from=build-env /app/publish .
 
