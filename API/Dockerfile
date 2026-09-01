@@ -1,4 +1,4 @@
-﻿FROM ://microsoft.com AS build
+FROM ://microsoft.com AS build
 WORKDIR /src
 COPY ["API.csproj", "./"]
 RUN dotnet restore "API.csproj"
