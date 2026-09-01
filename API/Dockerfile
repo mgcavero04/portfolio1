@@ -4,7 +4,7 @@ WORKDIR /src
 
 # 2. Copy everything and publish the release
 COPY . .
-RUN dotnet publish "API.csproj" -c Release -o /app/publish
+RUN dotnet publish "Restore.csproj" -c Release -o /app/publish
 
 # 3. Build runtime image
 FROM ://microsoft.com AS final
