@@ -1,22 +1,23 @@
-# 1. Fetch the correct .NET 10 SDK build tool
-FROM mcr.microsoft.com AS build
+# Stage 1: Build Environment
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 WORKDIR /src
 
-# 2. Copy and restore dependencies
+# Copy project files and restore packages
 COPY ["API.csproj", "./"]
 RUN dotnet restore "API.csproj"
 
-# 3. Compile the application
+# Copy everything else and publish release build
 COPY . .
 RUN dotnet publish "API.csproj" -c Release -o /app/publish
 
-# 4. Fetch the correct .NET 10 Runtime environment
-FROM mcr.microsoft.com AS final
+# Stage 2: Runtime Environment
+FROM ://microsoft.com AS runtime-env
 WORKDIR /app
-COPY --from=build /app/publish .
+COPY --from=build-env /app/publish .
 
-# 5. Bind port to Render defaults
+# Expose Render standard ports
 ENV ASPNETCORE_HTTP_PORTS=10000
 
 ENTRYPOINT ["dotnet", "API.dll"]
+
 
