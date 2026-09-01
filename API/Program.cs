@@ -13,18 +13,23 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddDbContext<StoreContext>(opt =>
+/*builder.Services.AddDbContext<StoreContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")
 
         sqlOptions =>
         {
             sqlOptions.EnableRetryOnFailure(maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
+                maxRetryDelay: TimeSpan.FromSeconds(30));
                 errorNumbersToAdd: null);
         }
     );
+);*/
+builder.Services.AddDbContext<StoreContext>(opt => 
+{
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
 
 builder.Services.AddCors();
 builder.Services.AddTransient<ExceptionMiddleware>();
