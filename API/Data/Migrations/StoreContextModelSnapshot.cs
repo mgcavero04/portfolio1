@@ -57,7 +57,7 @@ namespace API.Data.Migrations
 
                     b.Property<string>("Url")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text(max)");
 
                     b.HasKey("Id");
 
