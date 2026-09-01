@@ -16,6 +16,9 @@ WORKDIR /app
 COPY --from=build-env /app/publish .
 
 # Expose Render standard ports
+# 👇 CRITICAL FIX: Force container to use polling at the system root level
+ENV DOTNET_USE_POLLING_FILE_WATCHER=1
+ENV ASPNETCORE_HOSTINGSTARTUP__EXCLUDEASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserLink
 ENV ASPNETCORE_HTTP_PORTS=10000
 
 ENTRYPOINT ["dotnet", "API.dll"]
