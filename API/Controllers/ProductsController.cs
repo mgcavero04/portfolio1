@@ -1,14 +1,12 @@
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
 using API.Data;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")] // http://localhost:5263/api/products
-    [ApiController]
-    public class ProductsController(StoreContext context) : ControllerBase
+    
+    public class ProductsController(StoreContext context) : BaseApiController
     {
 
         [HttpGet]

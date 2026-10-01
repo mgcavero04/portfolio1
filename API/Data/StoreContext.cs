@@ -15,8 +15,7 @@ namespace API.Data
         {
             modelBuilder.Entity<Product>()
                 .Property(product => product.Url)
-                .IsRequired()
-                .HasColumnType("nvarchar(max)");
+                .IsRequired();
         }
         // Ensure no properties named "Database" or "SaveChanges()" are written here!
     }

@@ -38,10 +38,16 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
+// Only redirect to HTTPS locally. 
+// Render manages HTTPS automatically at the network edge.
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseCors(opt =>
 {
-    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:3000", "https://mgportfolio.azurewebsites.net");
+    opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("https://localhost:3000","https://portfolio1-api.onrender.com");
+   
 
 });
 app.MapControllers();

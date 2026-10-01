@@ -1,3 +1,4 @@
+//called from store
 import { createApi} from "@reduxjs/toolkit/query/react";
 import type { Product } from "../../app/models/product";
 import { baseQueryWithErrorHandling } from "../../app/api/baseApi";
