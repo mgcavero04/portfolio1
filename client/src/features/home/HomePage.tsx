@@ -10,7 +10,7 @@ export default function HomePage() {
         position='relative'
       >
         <img 
-          src="/images/hero1.jpg" 
+          src="/images/background1.png" 
           alt="ski resort image" 
           style={{
             position: 'absolute',
