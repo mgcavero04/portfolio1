@@ -1,30 +1,40 @@
-# Stage 1: Build Environment....change this to the version of .NET you are using
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
+# Stage 1: Build the React Frontend (Client)
+FROM node:20-alpine AS frontend-build
+WORKDIR /app
+# Copy the frontend package definitions and install dependencies
+COPY client/package*.json ./
+RUN npm install
+# Copy the rest of the frontend source files and build the production assets
+COPY client/ ./
+RUN npm run build
+
+# Stage 2: Build the C# Backend Environment
+FROM ://microsoft.com AS backend-build
 WORKDIR /src
 
-# Copy project files and restore packages...change this to the name of your project file, also in lines: 11 and 24
 COPY ["API/API.csproj", "API/"]
 RUN dotnet restore "API/API.csproj"
 
-# Copy everything else and publish release build
 COPY . .
-# 👇 CRITICAL FIXES: Clear local build debris and force complete cloud recompilation
+
+# 👇 CRITICAL FIX: Inject the React compiled dist files straight into the API's wwwroot folder
+COPY --from=frontend-build /app/dist ./API/wwwroot
+
+# Clear lingering build targets and compile the complete application package
 RUN dotnet clean "API/API.csproj" -c Release
 RUN dotnet publish "API/API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
 
-# Stage 2: Runtime Environment
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
+# Stage 3: Execution Runtime Environment
+FROM ://microsoft.com AS final-runtime
 WORKDIR /app
-COPY --from=build-env /app/publish .
-#Install Kerberos/GSSAPI dependency libraries required by Npgsql
+COPY --from=backend-build /app/publish .
+
+# Install missing Kerberos/GSSAPI dependency libraries required by Npgsql
 USER root
-RUN apt-get update && apt-get install -y libgssapi-krb5-2 && rm -rf /var/lib/apt/lists/
-# Expose Render standard ports
-# 👇 CRITICAL FIX: Force container to use polling at the system root level
+RUN apt-get update && apt-get install -y libgssapi-krb5-2 && rm -rf /var/lib/apt/lists/*
+
 ENV DOTNET_USE_POLLING_FILE_WATCHER=1
 ENV ASPNETCORE_HOSTINGSTARTUP__EXCLUDEASSEMBLIES=Microsoft.AspNetCore.Watch.BrowserLink
 ENV ASPNETCORE_HTTP_PORTS=10000
 
 ENTRYPOINT ["dotnet", "API.dll"]
-
-
