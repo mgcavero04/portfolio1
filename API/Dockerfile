@@ -17,7 +17,7 @@ RUN dotnet restore "API/API.csproj"
 
 COPY . .
 
-# 👇 CRITICAL FIX: Inject the React compiled dist files straight into the API's wwwroot folder
+# Inject the React compiled dist files straight into the API's wwwroot folder
 COPY --from=frontend-build /app/dist ./API/wwwroot
 
 # Clear lingering build targets and compile the complete application package
