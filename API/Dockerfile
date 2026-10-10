@@ -3,14 +3,14 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 WORKDIR /src
 
 # Copy project files and restore packages...change this to the name of your project file, also in lines: 11 and 24
-COPY ["API/API.csproj", "API/"]
-RUN dotnet restore "API/API.csproj"
+COPY ["API.csproj", "API/"]
+RUN dotnet restore "API.csproj"
 
 # Copy everything else and publish release build
 COPY . .
 # 👇 CRITICAL FIXES: Clear local build debris and force complete cloud recompilation
-RUN dotnet clean "API/API.csproj" -c Release
-RUN dotnet publish "API/API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
+RUN dotnet clean "API.csproj" -c Release
+RUN dotnet publish "API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
 
 # Stage 2: Runtime Environment
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
