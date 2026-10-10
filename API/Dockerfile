@@ -4,7 +4,7 @@ WORKDIR /src
 
 # Copy project files and restore packages...change this to the name of your project file, also in lines: 11 and 24
 COPY ["API/API.csproj", "API/"]
-RUN dotnet restore "API.csproj"
+RUN dotnet restore "API/API.csproj"
 
 # Copy everything else and publish release build
 COPY . .
