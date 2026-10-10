@@ -8,7 +8,9 @@ RUN dotnet restore "API/API.csproj"
 
 # Copy everything else and publish release build
 COPY . .
-RUN dotnet publish "API/API.csproj" -c Release -o /app/publish
+# 👇 CRITICAL FIXES: Clear local build debris and force complete cloud recompilation
+RUN dotnet clean "API/API.csproj" -c Release
+RUN dotnet publish "API/API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
 
 # Stage 2: Runtime Environment
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
