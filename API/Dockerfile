@@ -7,7 +7,7 @@ COPY client/ ./
 RUN npm run build
 
 # Stage 2: Build the C# Backend Environment
-FROM ://microsoft.com AS backend-build
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS backend-build
 WORKDIR /src
 
 COPY ["API/API.csproj", "API/"]
@@ -22,7 +22,7 @@ RUN dotnet clean "API/API.csproj" -c Release
 RUN dotnet publish "API/API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
 
 # Stage 3: Execution Runtime Environment
-FROM ://microsoft.com AS final-runtime
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final-runtime
 WORKDIR /app
 COPY --from=backend-build /app/publish .
 
