@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:17
     environment:
-      POSTGRES_DB: storedb
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: portfolio_sg6a
+      POSTGRES_USER: portfolio_sg6a_user
+      POSTGRES_PASSWORD: E3qIMdlaHfERfyv66phjItgcv7sCwjhu
     ports:
       - "5432:5432"
     volumes:
