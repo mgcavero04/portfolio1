@@ -3,12 +3,12 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 WORKDIR /src
 
 # Copy project files and restore packages...change this to the name of your project file, also in lines: 11 and 24
-COPY ["API.csproj", "./"]
-RUN dotnet restore "API.csproj"
+COPY ["API/API.csproj", "API/"]
+RUN dotnet restore "API/API.csproj"
 
 # Copy everything else and publish release build
 COPY . .
-RUN dotnet publish "API.csproj" -c Release -o /app/publish
+RUN dotnet publish "API/API.csproj" -c Release -o /app/publish
 
 # Stage 2: Runtime Environment
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
