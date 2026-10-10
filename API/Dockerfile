@@ -14,7 +14,9 @@ RUN dotnet publish "API/API.csproj" -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime-env
 WORKDIR /app
 COPY --from=build-env /app/publish .
-
+#Install Kerberos/GSSAPI dependency libraries required by Npgsql
+USER root
+RUN apt-get update && apt-get install -y libgssapi-krb5-2 && rm -rf /var/lib/apt/lists/
 # Expose Render standard ports
 # 👇 CRITICAL FIX: Force container to use polling at the system root level
 ENV DOTNET_USE_POLLING_FILE_WATCHER=1
