@@ -57,3 +57,4 @@ app.MapFallbackToController("Index", "Fallback");
 await DbInitializer.InitDb(app);
 
 app.Run();
+ 
