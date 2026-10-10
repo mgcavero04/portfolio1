@@ -10,7 +10,7 @@ export default function HomePage() {
         position='relative'
       >
         <img 
-          src="/images/background1.png" 
+          src="/images/background.jpg" 
           alt="ski resort image" 
           style={{
             position: 'absolute',
@@ -32,12 +32,12 @@ export default function HomePage() {
         >
           <Typography
             variant="h1"
-            color="white"
+            color="#1976d2"
             fontWeight='bold'
             textAlign='center'
             sx={{my: 3}}
           >
-            Welcome to my portfolio!
+            Welcome to my portfolio
           </Typography>
           <Button
             variant="contained"
