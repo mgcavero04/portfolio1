@@ -37,7 +37,7 @@ export default function HomePage() {
             textAlign='center'
             sx={{my: 3}}
           >
-            My Portfolio
+            My portfolio
           </Typography>
           <Button
             variant="contained"
