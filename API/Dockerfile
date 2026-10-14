@@ -1,5 +1,5 @@
 # Stage 1: Build the React Frontend (Client)
-FROM node:20-alpine AS frontend-build
+FROM node:22-alpine AS frontend-build
 WORKDIR /app
 COPY client/package*.json ./client/
 WORKDIR /app/client
