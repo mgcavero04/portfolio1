@@ -1,7 +1,8 @@
 # Stage 1: Build the React Frontend (Client)
 FROM node:20-alpine AS frontend-build
 WORKDIR /app
-COPY client/package*.json ./
+COPY client/package*.json ./client/
+WORKDIR /app/client
 RUN npm install
 COPY client/ ./
 RUN npm run build
@@ -16,7 +17,7 @@ RUN dotnet restore "API/API.csproj"
 COPY . .
 
 # Inject the React compiled dist files straight into the API's wwwroot folder
-COPY --from=frontend-build /app/dist ./API/wwwroot
+COPY --from=frontend-build /app/API/wwwroot ./API/wwwroot
 
 RUN dotnet clean "API/API.csproj" -c Release
 RUN dotnet publish "API/API.csproj" -c Release -o /app/publish --no-restore /p:UseAppHost=false
