@@ -2,9 +2,9 @@ services:
   postgres:
     image: postgres:17
     environment:
-      POSTGRES_DB: sudo_delete_database_portfolio_db_v3
-      POSTGRES_USER: sudo_delete_database_portfolio_db_v3_user
-      POSTGRES_PASSWORD: CS8nx5Zr2ZWKZkqksxS291AsTsvA7lLx
+      POSTGRES_DB: portfolio_db_v3
+      POSTGRES_USER: mgcavero04
+      POSTGRES_PASSWORD: x8fkCaYSqgzmscBUwbJqmmFxNDpFYdw6
     ports:
       - "5432:5432"
     volumes:
