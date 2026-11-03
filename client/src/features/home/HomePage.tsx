@@ -37,7 +37,7 @@ export default function HomePage() {
             textAlign='center'
             sx={{my: 3}}
           >
-            My portfolio
+           This website is built using React, TypeScript, Material UI, Redux Toolkit, and C#.NET
           </Typography>
           <Button
             variant="contained"
@@ -55,7 +55,7 @@ export default function HomePage() {
               border: '2px solid transparent'
             }}
           >
-            Go to shop
+            Go to Catalog
           </Button>
         </Box>
       </Box>

@@ -32,7 +32,7 @@ public class DbInitializer
                 Brand = "HTML, CSS, JavaScript",
                 Type = "Web Site",
                 QuantityInStock = 100,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/oldPortfolio.jpg"
+                Url = "/images/products/oldPortfolio.jpg"
             },
             
             new ()
@@ -44,7 +44,7 @@ public class DbInitializer
                 Brand = "Angular",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/angular7-1.jpg"
+                Url = "/images/products/angular7-1.jpg"
             },
             new ()
             {
@@ -55,7 +55,7 @@ public class DbInitializer
                 Brand = "Angular",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/angular7-2.jpg"
+                Url = "/images/products/angular7-2.jpg"
             },
             new ()
             {
@@ -66,7 +66,7 @@ public class DbInitializer
                 Brand = "Angular",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/keystonehardscapesTabs.jpg"
+                Url = "https://www.keystonehardscapes.com/resources"
             },
             new ()
             {
@@ -77,18 +77,18 @@ public class DbInitializer
                 Brand = "PHP, Javascript, CSS",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/map.png"
+                Url = "/images/products/map.png"
             },
             new ()
             {
                 Name = "ArcGIS Form",
                 Description = "This is an arcgis form that open as a pop up in a city of atlanta page.",
                 Price = 0,
-                PictureUrl = "/images/products/arcgisForm.jpg",
+                PictureUrl = "/images/products/arcgisForm.JPG",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
                 QuantityInStock = 100,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/arcgisForm.jpg"
+                Url = "https://www.atlantaga.gov/government/departments/grants-and-community-development"
             },
             new ()
             {
@@ -99,18 +99,18 @@ public class DbInitializer
                 Brand = "Python",
                 Type = "Web Site",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/compositeSimpsons.png"
+                Url = "/images/products/compositeSimpsons.png"
             },
             new ()
             {
                 Name = "Web site for the City of Atlanta",
                 Description = "This is a web site developed for the City of Atlanta using the WebFlow platform.",
                 Price = 0,
-                PictureUrl = "/images/products/atlpartnerships.jpg",
+                PictureUrl = "/images/products/atlpartnerships.JPG",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/atlpartnerships.jpg"
+                Url = "https://www.atlpartnerships.com/"
             },
             new ()
             {
@@ -121,7 +121,7 @@ public class DbInitializer
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/ecommercePage.png"
+                Url = "/images/products/ecommercePage.png"
             },
             new ()
             {
@@ -132,29 +132,29 @@ public class DbInitializer
                 Brand = "JQUery, Javascript, HTML, CSS",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/groups.jpg"
+                Url = "/images/products/groups.jpg"
             },
             new ()
             {
                 Name = "Professional Web Site",
                 Description = "This is a web site developed using the Web Flow platform.",
                 Price = 0,
-                PictureUrl = "/images/products/MarianaMontiel.jpg",
+                PictureUrl = "/images/products/MarianaMontiel.JPG",
                 Brand = "HTML, CSS, Javascript",
                 Type = "Web Site",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/MarianaMontiel.jpg"
+                Url = "https://www.marianamontiel.com/"
             },
             new ()
             {
                 Name = "Form for Input of Data",
                 Description = "This is a web application built using Angular, Typescript, .NET, SQL Server. This form accepts input of data in different formats and also lets upload many documents.",
                 Price = 0,
-                PictureUrl = "/images/products/netForm1.png",
+                PictureUrl = "/images/products/netForm1.PNG",
                 Brand = "Angular, Typescript, .NET, SQL Server",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/netForm1.png"
+                Url = "/images/products/netForm1.PNG"
             },
             new ()
             {
@@ -165,7 +165,7 @@ public class DbInitializer
                 Brand = "Tableau",
                 Type = "Visualization",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/salaries.jpg"
+                Url = "/images/products/salaries.jpg"
             },
             new ()
             {
@@ -176,7 +176,7 @@ public class DbInitializer
                 Brand = "Tableau",
                 Type = "Visualization",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/tableauDayHourMostUsed.jpg"
+                Url = "/images/products/tableauDayHourMostUsed.jpg"
             },
             new ()
             {
@@ -187,7 +187,7 @@ public class DbInitializer
                 Brand = "JQuery",
                 Type = "Web Application",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/take6(2).png"
+                Url = "/images/products/take6(2).png"
             },
             new ()
             {
@@ -198,7 +198,7 @@ public class DbInitializer
                 Brand = "Data Analysis",
                 Type = "Visualization",
                 QuantityInStock = 1,
-                Url = "https://mgportfolio.azurewebsites.net/images/products/take8.jpg"
+                Url = "/images/products/take8.jpg"
             }
 };
         context.Products.AddRange(products);
